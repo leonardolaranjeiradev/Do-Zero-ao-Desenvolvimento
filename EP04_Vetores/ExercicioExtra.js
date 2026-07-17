@@ -32,7 +32,7 @@
 
 let personagem = ["Leonardo", "Druída", 7, 25, 40, 37, 26, 215, "Cajado de Madeira", "Armadura Leve"];
 
-console.log("O " + personagem[0] + "encontrou um Cajado melhor e a equipou");
+console.log("O " + personagem[0] + " encontrou um Cajado melhor e a equipou");
 personagem[8] = "Cajado da Natureza";
 console.log("Comprou uma nova armadura que custou 113 moedas");
 personagem[9] = "Armadura de Couro";
