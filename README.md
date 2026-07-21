@@ -1,5 +1,5 @@
 # Do-Zero-ao-Desenvolvimento
-Do Zero ao Desenvolvimento | Documentando minha evolução em JavaScript e Node.js através de exercícios, projetos e aprendizado contínuo.
+Do Zero ao Desenvolvimento | Documentando minha evolução em JavaScript, Node.js e futuramente quem sabe me tornar um Fullstack. Irei postar meus exercícios, projetos e aprendizado contínuo.
 
 A proposta é simples:
 
