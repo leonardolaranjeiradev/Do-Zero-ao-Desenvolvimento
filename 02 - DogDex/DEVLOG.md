@@ -53,3 +53,41 @@ services/
 
 e começar a entender como funcionam os componentes no React.
 
+## 📅 29/07/2026 - Primeira tela React
+
+Hoje foi o primeiro dia de desenvolvimento do DogDex.
+
+Criei a estrutura inicial do projeto utilizando React + Vite e comecei a entender melhor como um projeto React é organizado.
+
+Aprendi a função de cada pasta principal:
+
+- pages
+- components
+- services
+- assets
+
+Também entendi como funciona a comunicação entre arquivos no React:
+
+main.jsx → App.jsx → Home.jsx
+
+Criei meu primeiro componente React chamado Home e aprendi que um componente é basicamente uma função que retorna JSX.
+
+Montei a primeira versão da tela contendo:
+
+- Título do projeto
+- Subtítulo
+- Campo de busca
+- Botão
+
+Durante o processo aprendi:
+
+- O que é JSX
+- O motivo de usar um elemento pai (div)
+- Como funciona o export default
+- Como importar componentes em outros arquivos
+- A diferença entre uma função JavaScript comum e um componente React
+
+Ao final do dia consegui renderizar a página Home dentro do App e visualizar o resultado no navegador através do Vite.
+
+Primeira versão da interface funcionando ✅
+
