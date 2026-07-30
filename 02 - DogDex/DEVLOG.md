@@ -91,3 +91,35 @@ Ao final do dia consegui renderizar a página Home dentro do App e visualizar o 
 
 Primeira versão da interface funcionando ✅
 
+## 📅 30/07/2026 - Primeiro contato com State e Eventos
+
+Hoje avancei no desenvolvimento do DogDex e tive meu primeiro contato prático com o React de forma mais dinâmica.
+
+Aprendi o conceito de State utilizando o hook `useState`.
+
+Principais aprendizados:
+
+- Como importar e utilizar o `useState`
+- Diferença entre `raca` (estado atual) e `setRaca` (função que atualiza o estado)
+- Como definir um valor inicial para um estado
+- Como exibir uma variável dentro do JSX utilizando `{}`
+
+Também aprendi sobre eventos no React, especialmente o `onChange`.
+
+Durante os testes entendi o fluxo:
+
+Input → Evento → e.target.value → setRaca → Atualização do estado → Atualização da tela
+
+Implementei um campo de busca capaz de capturar o texto digitado pelo usuário em tempo real e exibi-lo na interface.
+
+Ao final do estudo a Home do DogDex passou a:
+
+✅ Capturar dados digitados pelo usuário
+
+✅ Atualizar o estado da aplicação
+
+✅ Exibir o valor atualizado na tela sem recarregar a página
+
+Também personalizei a interface inicial do projeto, adicionando um subtítulo mais alinhado à proposta do DogDex.
+
+### Código mais importante aprendido hoje
