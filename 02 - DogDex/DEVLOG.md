@@ -123,3 +123,94 @@ Ao final do estudo a Home do DogDex passou a:
 Também personalizei a interface inicial do projeto, adicionando um subtítulo mais alinhado à proposta do DogDex.
 
 ### Código mais importante aprendido hoje
+
+
+## 📅 31/07/2026
+
+### 🚨 Meu primeiro erro no DogDex
+
+Hoje recebi um novo `desafio` do `Gui`: adicionar componentes da biblioteca `Shadcn/UI` ao projeto utilizando a documentação oficial.
+
+No começo foi bem complicado entender o que eu deveria fazer, porque nunca tinha utilizado uma documentação dessa forma. Além disso, o Gui pediu para que eu não utilizasse IA para receber respostas prontas. Como eu estava completamente perdido, usei a IA apenas para me orientar e entender o caminho, deixando claro que não queria a solução.
+
+Durante a configuração surgiu meu primeiro `erro` real no projeto:
+
+`Could not find valid path aliases or package imports for init.`
+
+Foi nesse momento que fiz uma descoberta importante.
+
+O Shadcn utiliza exemplos em `TypeScript` na documentação, enquanto o DogDex foi criado utilizando `JavaScript`. Por causa disso, a documentação fazia referência ao arquivo `tsconfig.json`, que não existia no meu projeto.
+
+Depois de investigar o problema, descobri que o equivalente para projetos JavaScript é o `jsconfig.json`. Criei esse arquivo e configurei os aliases necessários para que o Shadcn reconhecesse a estrutura do projeto.
+
+Além disso, durante o processo:
+
+- Instalei e configurei o Tailwind CSS
+- Ajustei as configurações do Vite
+- Configurei os aliases de importação
+- Entendi a diferença entre `tsconfig.json` e `jsconfig.json`
+
+No final tudo deu certo.
+
+O primeiro componente criado pelo Shadcn foi o `button.jsx`.
+
+Na página Home eu apenas substituí:
+
+`<button>Pesquisar</button>`
+
+por:
+
+`<Button>Pesquisar</Button>`
+
+E, mesmo sem personalizar nada, o visual do botão já mudou completamente.
+
+Foi interessante perceber que, algumas vezes, uma única linha de código pode mudar bastante a aparência da aplicação quando estamos utilizando bibliotecas de componentes.
+
+### Aprendizados de hoje
+
+- Como ler e interpretar uma documentação técnica
+- Diferença entre TypeScript e JavaScript na configuração do projeto
+- O que são aliases de importação
+- Configuração inicial do Shadcn/UI
+- Configuração do Tailwind CSS com Vite
+
+Hoje foi o primeiro dia em que precisei investigar e entender um erro por conta própria para conseguir avançar no projeto.
+
+### Continuação do desafio
+
+Depois de conseguir configurar o Shadcn e adicionar o primeiro botão, continuei explorando a documentação para entender melhor como funcionam os componentes da biblioteca.
+
+Durante esse processo adicionei outros componentes à aplicação:
+
+- Input
+- Field
+- FieldLabel
+- ButtonGroup
+
+Foi nesse momento que comecei a perceber um padrão. Não basta apenas importar um componente na página. Primeiro é necessário adicioná-lo ao projeto através da CLI do Shadcn, depois importá-lo e só então utilizá-lo no código.
+
+Além disso, comecei a estudar a documentação do Tailwind CSS para melhorar o layout da Home.
+
+Os primeiros conceitos que aprendi foram:
+
+- flex
+- flex-col
+- justify-center
+- items-center
+- max-width
+- margin
+
+Utilizando essas classes consegui centralizar os componentes da tela e controlar a largura do campo de pesquisa.
+
+A Home, que inicialmente possuía apenas elementos HTML simples, passou a utilizar componentes do Shadcn e um layout mais organizado.
+
+Estado atual da Home:
+
+- DogDex centralizado
+- Campo de pesquisa estilizado
+- Botão integrado ao campo de pesquisa
+- Layout controlado com Tailwind CSS
+
+O que mais chamou minha atenção foi perceber que não preciso decorar tudo. O mais importante é saber identificar o problema e encontrar a seção correta da documentação para procurar a solução.
+
+Hoje terminei o dia com a sensação de que estou começando a entender como navegar por documentações reais e utilizar bibliotecas externas sem depender exclusivamente de tutoriais.
