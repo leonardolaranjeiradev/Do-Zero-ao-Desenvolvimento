@@ -214,3 +214,235 @@ Estado atual da Home:
 O que mais chamou minha atenção foi perceber que não preciso decorar tudo. O mais importante é saber identificar o problema e encontrar a seção correta da documentação para procurar a solução.
 
 Hoje terminei o dia com a sensação de que estou começando a entender como navegar por documentações reais e utilizar bibliotecas externas sem depender exclusivamente de tutoriais.
+
+
+## 📅 03/08/2026
+
+### 🐶 Organizando a Home do DogDex
+
+Depois de dois dias de descanso, voltei a mexer no DogDex.
+
+Meu objetivo inicial era melhorar a estrutura da Home antes de partir para funcionalidades mais complexas.
+
+Logo no começo percebi que os elementos da página estavam muito "soltos", então decidi reorganizar o componente.
+
+Separei a Home em áreas independentes:
+
+- Página
+- Título
+- Pesquisa
+- Resultado
+- Controles
+
+A ideia foi deixar a estrutura mais organizada e facilitar futuras modificações.
+
+---
+
+### 🎨 Trabalhando no layout
+
+Depois de estruturar a página, comecei a estudar melhor o comportamento de algumas classes do Tailwind.
+
+Durante os testes aprendi melhor a função de:
+
+- `flex`
+- `flex-col`
+- `justify-center`
+- `items-center`
+- `min-h-screen`
+- `margin`
+- `border`
+- `padding`
+- `max-width`
+
+Um aprendizado interessante aconteceu quando tentei melhorar a borda da área de pesquisa.
+
+Inicialmente achei que o problema estava na borda em si, mas depois percebi que o verdadeiro problema era a largura da div.
+
+Foi a primeira vez que vi claramente que muitas vezes o erro visual não está exatamente na propriedade que estamos modificando.
+
+---
+
+### 🔍 Criando a área de pesquisa
+
+Transformei a seção de pesquisa em um card.
+
+Utilizei:
+
+- Border
+- Padding
+- Rounded
+- Background
+
+para criar uma área visualmente separada da página.
+
+Também personalizei o visual do botão e continuei ajustando a identidade visual da aplicação.
+
+---
+
+### 🌎 Adicionando controles
+
+Achei que seria interessante já deixar preparados os controles que pretendo utilizar futuramente.
+
+Pesquisei na documentação do Shadcn qual componente seria adequado para criar menus de seleção e encontrei o `Dropdown Menu`.
+
+Instalei o componente e estudei sua estrutura.
+
+Durante o processo aprendi a função de:
+
+- DropdownMenu
+- DropdownMenuTrigger
+- DropdownMenuContent
+- DropdownMenuItem
+
+Depois disso criei dois menus:
+
+**Tema**
+
+- Claro
+- Escuro
+
+**Idioma**
+
+- Português
+- Inglês
+
+Ambos ainda sem funcionalidade, servindo apenas como preparação para etapas futuras.
+
+---
+
+### ⚛️ Meu principal aprendizado de React hoje
+
+Até então eu tinha apenas um estado:
+
+```jsx
+const [raca, setRaca] = useState("")
+
+O problema é que o resultado mudava enquanto eu digitava.
+
+Por exemplo:
+H
+Hu
+Hus
+Husk
+Husky
+
+Isso acontecia porque o mesmo estado estava sendo usado tanto para armazenar o texto digitado quanto para exibir o resultado.
+
+Para resolver isso, criei um segundo estado:
+
+const [resultado, setResultado] = useState("")
+
+A partir daí passei a trabalhar com responsabilidades diferentes:
+
+raca
+↓
+O que está sendo digitado
+
+resultado
+↓
+O que foi pesquisado
+
+Quando o usuário clica no botão "Pesquisar", o valor de raca é enviado para resultado.
+
+Com isso o DogDex passou a ter seu primeiro comportamento real de aplicação.
+
+Fluxo atual:
+
+Usuário digita
+↓
+Valor fica em raca
+↓
+Usuário clica em Pesquisar
+↓
+resultado recebe raca
+↓
+Resultado aparece na tela
+
+Foi provavelmente o aprendizado mais importante do dia.
+
+📚 Aprendizados de hoje
+Organização de layout
+Estruturação de componentes
+Flexbox no Tailwind
+Width, Border, Padding e Rounded
+Dropdown Menu do Shadcn
+Eventos onChange e onClick
+Uso de múltiplos useState
+Separação de responsabilidades entre estados
+Pensar primeiro na estrutura e depois no visual
+
+Hoje o DogDex deixou de ser apenas uma interface e passou a possuir seus primeiros comportamentos reais em React.
+
+### ⌨️ Melhorando a experiência da busca
+
+Após implementar a pesquisa pelo botão, percebi que a experiência ainda poderia ser melhor.
+
+Pesquisei sobre eventos de teclado no React e aprendi a utilizar o `onKeyDown`.
+
+Criei uma função chamada `pesquisar()` para concentrar a lógica da busca:
+
+function pesquisar() {
+    setResultado(raca)
+}
+
+Depois reutilizei essa mesma função em dois lugares:
+
+- Clique no botão Pesquisar
+- Pressionamento da tecla Enter dentro do Input
+
+Com isso a busca passou a funcionar de duas formas diferentes sem duplicar código.
+
+Foi meu primeiro contato com reutilização de funções para controlar múltiplos eventos no React.
+
+Fluxo atual:
+
+Usuário digita
+↓
+Pressiona Enter
+
+ou
+
+Usuário digita
+↓
+Clica em Pesquisar
+
+↓
+
+Resultado é atualizado
+
+---
+
+Atualização dos aprendizados do dia:
+
+- Organização de layout
+- Estruturação de componentes
+- Flexbox no Tailwind
+- Width, Border, Padding e Rounded
+- Dropdown Menu do Shadcn
+- Eventos onChange, onClick e onKeyDown
+- Uso de múltiplos useState
+- Separação de responsabilidades entre estados
+- Reutilização de funções
+- Pensar primeiro na estrutura e depois no visual
+
+---
+
+Reflexão do dia:
+
+Hoje o DogDex deixou de ser apenas uma interface estática e passou a possuir seus primeiros comportamentos reais em React.
+
+Além do layout da aplicação, consegui implementar uma busca funcional através do botão e também pela tecla Enter, reutilizando a mesma função para ambos os eventos.
+
+Também comecei a estudar a documentação da The Dog API para entender quais informações serão utilizadas futuramente no projeto.
+
+Depois de analisar as respostas da API, identifiquei que ela já fornece informações suficientes para a próxima etapa do DogDex, como:
+
+- Nome da raça
+- Origem
+- Temperamento
+- Peso
+- Altura
+- Expectativa de vida
+- Imagem
+
+O próximo grande passo do projeto será aprender a consumir esses dados e exibi-los na interface.
